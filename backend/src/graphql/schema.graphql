@@ -1,0 +1,30 @@
+type Query {
+    ping:String!
+    menus:[Menu!]
+}
+type Menu {
+    _id:ID!
+    starter:String!
+    main:String!
+    dessert:String!
+    price:Float!
+}
+
+type Mutation {
+    createMenu(
+        starter:String!
+        main:String!
+        dessert:String!
+        price:Float!
+    ): Menu
+
+    deleteMenu(_id:ID!):Menu
+
+    updateMenu(_id:ID!,input:MenuInput):Menu
+}
+input MenuInput{
+    starter:String!
+    main:String!
+    dessert:String!
+    price:Float!
+}
